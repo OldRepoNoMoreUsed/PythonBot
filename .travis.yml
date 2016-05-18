@@ -1,6 +1,7 @@
 language: python
-python:
+python: 
 	-"3.5"
 
 install: "pip install aiohttp websocket pytest"
-script: "py.test --doctest-module 2048/*.py
+script: py.test --doctest-module MainAlonso.py
+
