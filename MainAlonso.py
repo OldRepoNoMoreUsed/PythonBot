@@ -2,15 +2,15 @@ import time
 
 from slackclient import SlackClient
 
-"""
-balbla
->>>truc()
-1
-
-blabla
-"""
-
 def truc():
+    """
+    blablabla
+
+    >>> truc()
+    1
+
+    :return:
+    """
     return 1
 
 TOKEN="xoxb-"
