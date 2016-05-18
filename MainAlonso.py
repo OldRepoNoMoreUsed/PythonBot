@@ -2,7 +2,18 @@ import time
 
 from slackclient import SlackClient
 
-TOKEN="xoxb-38203543493-XFvbmk66Z1bTg4ru7iorArpS"
+"""
+balbla
+>>>truc()
+1
+
+blabla
+"""
+
+def truc():
+    return 1
+
+TOKEN="xoxb-"
 
 bot = SlackClient(TOKEN)
 if bot.rtm_connect():
