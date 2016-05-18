@@ -11,7 +11,7 @@ blabla
 """
 
 def truc():
-    return 1
+    return 2
 
 TOKEN="xoxb-"
 
