@@ -11,7 +11,7 @@ blabla
 """
 
 def truc():
-    return 2
+    return 1
 
 TOKEN="xoxb-"
 
@@ -22,6 +22,7 @@ if bot.rtm_connect():
             messages = bot.rtm_read()
             if messages:
                 print(messages)
+                print("Coucou")
             else:
                 time.sleep(1)
     except KeyboardInterrupt:
