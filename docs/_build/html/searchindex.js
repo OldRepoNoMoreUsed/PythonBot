@@ -1,0 +1,1 @@
+Search.setIndex({envversion:49,filenames:["BotAlonso","index","modules"],objects:{},objnames:{},objtypes:{},terms:{index:1,page:1,search:1},titles:["BotAlonso package","Welcome to BotAlonso&#8217;s documentation!","BotAlonso"],titleterms:{api:0,botalonso:[0,1,2],config:0,content:0,document:1,indice:1,modul:0,packag:0,submodul:0,tabl:1,welcom:1}})
