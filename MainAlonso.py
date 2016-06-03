@@ -171,6 +171,9 @@ class BotAlonso:
         error = "La commande que vous avez entré n'existe pas. Taper 'help' pour recevoir de l'aide !"
         return await self.sendText(error, id_chan, id_team)
 
+    def fonction_pour_prouver_que_je_peux_faire_des_test(self):
+        return 1
+
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()

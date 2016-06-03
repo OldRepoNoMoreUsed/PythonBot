@@ -45,14 +45,83 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="botalonso-api-module">
-<h2>BotAlonso.api module<a class="headerlink" href="#botalonso-api-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="botalonso-api">
+<h2>BotAlonso.api<a class="headerlink" href="#botalonso-api" title="Permalink to this headline">¶</a></h2>
+<p>Cette partie décrit la fonctionnalité du module api de notre bot.</p>
+<p>Ce module ne contient qu une seul méthode</p>
+<dl class="function">
+<dt>
+<code class="descname">api_call(method, data=None, token=TOKEN):</code></dt>
+<dd></dd></dl>
+
+<p>cette méthode permet la communication avec slack</p>
 </div>
-<div class="section" id="botalonso-config-module">
-<h2>BotAlonso.config module<a class="headerlink" href="#botalonso-config-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="botalonso-config">
+<h2>BotAlonso.config<a class="headerlink" href="#botalonso-config" title="Permalink to this headline">¶</a></h2>
+<p>Ce module contient deux variables.
+La variable TOKEN qui est le token pour se connecter a Slack.
+Et une variable DEBUG.</p>
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="botalonso-mainalonso">
+<h2>BotAlonso.MainAlonso<a class="headerlink" href="#botalonso-mainalonso" title="Permalink to this headline">¶</a></h2>
+<p>Cette partie décrit la fonctionnalité du module MainAlonso de notre bot.</p>
+<p>Ce module contient une classe EventHandler qui permet de créer et de traiter un event provoquer par une modification d&#8217;un fichier.</p>
+<p>Ce module contient une seconde classe BotAlonso. Cette classe est la classe principal de notre programme.
+Elle possede 8 fonctions:</p>
+<dl class="function">
+<dt>
+<code class="descname">__init__(self, token=TOKEN):$</code></dt>
+<dd></dd></dl>
+
+<p>Initialise le bot</p>
+<dl class="function">
+<dt>
+<code class="descname">sendText(self, reponse, id_chan, id_team):</code></dt>
+<dd></dd></dl>
+
+<p>Envoie la reponse du bot</p>
+<dl class="function">
+<dt>
+<code class="descname">add(self, argument, id_utilisateur, id_chan, id_team):</code></dt>
+<dd></dd></dl>
+
+<p>Ajoute un fichier a la liste des fichiers à controler de l&#8217;utilisateur</p>
+<dl class="function">
+<dt>
+<code class="descname">check(self, id_chan, id_utilisateur, id_team):</code></dt>
+<dd></dd></dl>
+
+<p>Controle la modification du fichier</p>
+<dl class="function">
+<dt>
+<code class="descname">remove(self, argument, id_utilisateur, id_chan, id_team):</code></dt>
+<dd></dd></dl>
+
+<p>Permet la suppression d&#8217;un fichier a suivre</p>
+<dl class="function">
+<dt>
+<code class="descname">help(self, id_chan, id_utilisateur, id_team):</code></dt>
+<dd></dd></dl>
+
+<p>Envoie le manuel utilisateur du bot</p>
+<dl class="function">
+<dt>
+<code class="descname">error(self, id_chan,id_utilisateur, id_team):</code></dt>
+<dd></dd></dl>
+
+<p>Envoie un message d&#8217;erreur lorsqu&#8217;une commande erroné est entrée</p>
+<dl class="function">
+<dt>
+<code class="descname">execute(self, message):</code></dt>
+<dd></dd></dl>
+
+<p>Lis et execute la commande passé dans le message</p>
+<dl class="function">
+<dt>
+<code class="descname">connect(self):</code></dt>
+<dd></dd></dl>
+
+<p>Fonction de connection de notre bot a slack</p>
 </div>
 </div>
 
@@ -66,9 +135,9 @@
   <ul>
 <li><a class="reference internal" href="#">BotAlonso package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#botalonso-api-module">BotAlonso.api module</a></li>
-<li><a class="reference internal" href="#botalonso-config-module">BotAlonso.config module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#botalonso-api">BotAlonso.api</a></li>
+<li><a class="reference internal" href="#botalonso-config">BotAlonso.config</a></li>
+<li><a class="reference internal" href="#botalonso-mainalonso">BotAlonso.MainAlonso</a></li>
 </ul>
 </li>
 </ul>
