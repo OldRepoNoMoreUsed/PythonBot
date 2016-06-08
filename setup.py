@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='BotAlonso',
+    name='Bot',
     version='1.0',
     description=__doc__,
     packages=find_packages(),

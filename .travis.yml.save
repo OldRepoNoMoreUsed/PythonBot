@@ -3,10 +3,10 @@ python:
   -"3.5"
 
 install: "pip install aiohttp websocket pytest"
-script: py.test --doctest-module MainAlonso.planguage: python
+script: py.test --doctest-module test.planguage: python
 python: 
 	-"3.5"
 
 install: "pip install aiohttp websocket pytest"
-script: py.test --doctest-module MainAlonso.py
+script: py.test --doctest-module test.py
 

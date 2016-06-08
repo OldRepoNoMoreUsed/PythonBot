@@ -3,4 +3,4 @@ python:
   - "3.5"
 
 install: "pip install ."
-script: py.test --doctest-module MainAlonso.py
+script: py.test --doctest-module test.py

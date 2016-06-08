@@ -8,16 +8,16 @@ from stat import ST_MTIME
 
 import aiohttp
 import pyinotify
+from Bot.config import DEBUG, TOKEN
 
-from BotAlonso.api import api_call
-from BotAlonso.config import DEBUG, TOKEN
+from Bot.api import api_call
 
 
 class EventHandler(pyinotify.ProcessEvent):
     """Permet de recupérer un event lié a la modification d'un fichier"""
 
     def process_IN_CLOSE_WRITE(self, event):
-        print("Fichier modifié: ", event.pathname)
+        print("**********/ Fichier modifié: ", event.pathname + "  \**********")
 
     def add_bot(self, BotAlonso):
         self.bot = BotAlonso
@@ -28,12 +28,14 @@ class BotAlonso:
     helpmsg = """
     Manuel du bot
     Ce bot sert a contrôler si un fichier a été modifié.
-    La commande add permet d'ajouter un fichier à une liste de fichier a controler.
+    La commande add permet d'ajouter un fichier à une liste de fichier à contrôler.
     Chaque utilisateur a une liste personnelle.
     Format de la commande add => @alonso: add chemin/fichier
     La commande check demande au bot de parcourir la liste assignée à l'utilisateur et
     a contrôler si des fichiers ont été modifiés
     Format de la commande check => @alonso: check
+    La commande remove permet de supprimer un fichier de la liste des fichiers à contrôler.
+    Elle fonctionne sur le meme format que la commande add.
     Enjoy our bot and Allons-y Alonso !!!
     """
 
@@ -70,7 +72,7 @@ class BotAlonso:
         with aiohttp.ClientSession() as client:
             async with client.ws_connect(self.rtm["url"]) as ws:
                 async for msg in ws:
-                    print(msg)
+                    #print(msg)
                     assert msg.tp == aiohttp.MsgType.text
                     message = json.loads(msg.data)
                     asyncio.ensure_future(self.execute(message))
@@ -146,6 +148,7 @@ class BotAlonso:
                 if str(last_modif) == str(value):
                     reponse += element + ": n'a pas été modifié !\n"
                 else:
+                    self.listeFile[element] = infos[ST_MTIME]
                     reponse += element + ": a subi des modifications !\n"
         return await self.sendText(reponse, id_chan, id_team)
 
